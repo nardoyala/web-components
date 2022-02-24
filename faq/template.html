@@ -1,0 +1,22 @@
+<!-- Pure CSS FAQ accordion -->
+
+<div id="faq" class="accordion container-width-small auto-center">
+  
+  <!-- Loop FAQ Questions/Ansers -->
+
+    <label class="question-wrapper"for="faq-question-{{ loop-index }}">
+      <input class="faq-trigger" id="faq-question-{{ loop-index }}" type="checkbox" />
+
+      <div class="question-container">
+        <h3 class="h5 faq-title">Question</h3>
+        <div class="faq-answer-container">
+          <div class="faq-answer">
+              Answer
+          </div>
+        </div>
+      </div>
+    </label>
+
+  <!-- Endloop -->
+
+</div>
