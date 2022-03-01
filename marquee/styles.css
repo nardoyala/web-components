@@ -1,0 +1,29 @@
+.marquee {
+	position: relative;
+	height: 100%;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.marquee__track {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	position: absolute;
+	white-space: nowrap;
+	will-change: transform;
+	animation: marquee--left 32s linear infinite;
+	overflow-y: hidden;
+}
+
+/* Right to left */
+@keyframes marquee--left {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+
+/* Left to right */
+@keyframes marquee--right {
+	from { transform: translateX(-50%); }
+	to { transform: translateX(0); }
+}
