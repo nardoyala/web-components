@@ -1,0 +1,150 @@
+.modal__wrapper {
+  display: inline-block;
+}
+.modal__wrapper .modal__button {
+  display: block;
+  width: fit-content;
+  padding: 0 20px;
+  margin: 0 auto;
+  color: #fff;
+  line-height: 34px;
+  text-decoration: none;
+  background: #333;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.modal__wrapper .modal__button:hover {
+  background: #444;
+}
+.modal__wrapper .popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: 250ms all;
+}
+.modal__wrapper .modal__inner {
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 90%;
+  max-width: 850px;
+  min-height: 360px;
+  box-sizing: border-box;
+  background: #fff;
+  transition: 250ms all;
+}
+.modal__inner .modal__image {
+  width: 40%;
+  background-image: url("https://via.placeholder.com/300x300");
+  background-position: center top;
+  background-size: cover;
+}
+.modal__inner .modal__close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  display: block;
+}
+.modal__inner .modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  padding: 40px;
+  text-align: center;
+  color:#58575C;
+}
+.modal__inner .modal__content .modal__title {
+  margin-bottom: 5px;
+  color: #404040;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4.1px;
+  text-transform: uppercase;
+}
+.modal__inner .modal__content input:not(input[type="checkbox"]) {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 12px;
+  border: 1px solid #E8E8E8;
+  padding: 0 15px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.modal__inner .modal__content input[type="submit"] {
+  width: 100%;
+  height: 46px;
+  background-color: #C49A6C;
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.modal__inner .modal__content .modal__accept-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 21px;
+  font-size: 12px;
+  text-align: left;
+}
+.modal__inner .modal__content .modal__accept-checkbox input {
+  margin-right: 10px;
+}
+.modal__inner .modal__content .modal__accept-checkbox a {
+  text-decoration: underline;
+}
+.modal__wrapper .popup .transparent-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  cursor: pointer;
+}
+.modal__wrapper > input {
+  display: none;
+}
+.modal__wrapper > input:checked + .popup {
+  opacity: 1;
+  visibility: visible;
+}
+.modal__wrapper > input:checked + .popup .modal__inner {
+  top: 50%;
+}
+
+@media only screen and (max-width: 640px) {
+  .modal__wrapper .popup .modal__inner {
+    display: block;
+    left: initial;
+    top: initial;
+    transform: none;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .modal__wrapper > input:checked + .popup .modal__inner {
+    top: initial
+  }
+
+  .modal__inner .modal__image {
+    display: none;
+  }
+
+  .modal__inner .modal__content {
+    width: 100%;
+    padding: 16px;
+    padding-top: 40px;
+  }
+}
